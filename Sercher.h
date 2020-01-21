@@ -1,0 +1,7 @@
+
+
+#ifndef FLIGHTSIM_PROJECT_SERCHER_H
+#define FLIGHTSIM_PROJECT_SERCHER_H
+
+//for the searching algorithm
+#endif //FLIGHTSIM_PROJECT_SERCHER_H
