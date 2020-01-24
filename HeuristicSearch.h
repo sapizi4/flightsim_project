@@ -15,7 +15,7 @@ public:
         int rowChild,rowFather,colChild,colFather;
         State<T> *start = searchable->getInitialState();
         string result = "";
-        list<State<T> *> backTraceList;
+        list<State<T>*> backTraceList;
         while (!goal->equals(start)) {
             string name = goal->getState();
             string parentName = goal->getFather()->getState();
