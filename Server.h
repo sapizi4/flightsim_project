@@ -1,5 +1,8 @@
 #ifndef FLIGHTSIM_PROJECT_SERVER_H
 #define FLIGHTSIM_PROJECT_SERVER_H
+#define BUFFER_SIZE 1024
+#include "ClientHandler.h"
+#include <iostream>
 using namespace std;
 //creating new namespace
 namespace server_side{
