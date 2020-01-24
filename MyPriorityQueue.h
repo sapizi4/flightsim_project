@@ -14,8 +14,8 @@
 using namespace std;
 
 template<class T>
-class MyPriorityQueue:public priority_queue<T,vector<T>,Comparator<T>>{
-
+class MyPriorityQueue:public priority_queue<T,vector<T>,Comparator<T>> {
+static test;
 public:
 T remove(const T &value) {
     auto it = std::find(this->c.begin(), this->c.end(), value);
@@ -26,6 +26,7 @@ T remove(const T &value) {
         return st;
     }
 }
+//check if the item is found at the queue
 bool atPriorityQueue(const T &value) {
     auto it = std::find(this->c.begin(), this->c.end(), value);
     return it != this->c.end();
