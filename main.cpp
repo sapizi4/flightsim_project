@@ -1,34 +1,39 @@
-
 #include <iostream>
 #include <strings.h>
-#include "BindingTable.h"
-#include "SymbolTable.h"
-#include "PathsTable.h"
-#include "MapDB.h"
+#include "Tables/BindTable.h"
+#include "Tables/SymbolTable.h"
+#include "Tables/PathsTable.h"
 #include "list"
-#include "Lexer.h"
-#include "ConnectCommand.h"
-#include "Parser.h"
-#include "OpenServerCommand.h"
+#include "Interpeter/Lexer.h"
+#include "Commands/ConnectCommand.h"
+#include "Interpeter/Parser.h"
+#include "Commands/OpenServerCommand.h"
 #include <stack>
-using namespace std;
+#include "CacheManager.h"
+#include "FileCacheManager.h"
+#include "StringReverser.h"
+#include "MySerialServer.h"
+#include "ClientHandler.h"
+#include "MyTestClientHandler.h"
+#include "MatrixSearchable.h"
+#include "Searcher.h"
+#include "MatrixSolver.h"
+#include "BestFirstSearch.h"
+#include "A_Star.h"
+#include "MyParallerServer.h"
+#include "Main.h"
 
-/**
- * Initialization of private static vars of the project:
- * (these singletons dont have a cpp file so i do it here)
- */
-BindingTable *BindingTable::s_instance = 0; // singleton
-SymbolTable *SymbolTable::s_instance = 0; // singleton
-PathsTable *PathsTable::s_instance = 0; // singleton
+#include <iostream>
+using namespace std;
+using namespace boot;
+
+BindTable *BindTable::s_instance = 0;
+SymbolTable *SymbolTable::s_instance = 0;
+PathsTable *PathsTable::s_instance = 0;
+
 
 int main(int argc, char **argv) {
-    int index =0;
-    Lexer lexer;
-    vector<string>cur_lex = lexer.split_from_file(argv[1]);
-    Parser parser(cur_lex,index);
-    //parser.createFunction(words);
-    parser.run(cur_lex);
-    close(DataReaderServer::getSocketFD());
-    close(DataWriterClient::getSocketFD());
-    return 0;
+    Main* run = new Main();
+    run->main(argc, argv);
+    delete (run);
 }
