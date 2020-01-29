@@ -14,10 +14,10 @@
 using namespace std;
 
 template<class T>
-class MyPriorityQueue:public priority_queue<T,vector<T>,Comparator<T>> {
-static test;
+class MyPriorityQueue:public priority_queue<T,vector<T>,Comparator<T>>{
+
 public:
-T remove(const T &value) {
+    T remove(const T &value) {
     auto it = std::find(this->c.begin(), this->c.end(), value);
     if (it != this->c.end()) {
         T st = *it;
@@ -26,15 +26,14 @@ T remove(const T &value) {
         return st;
     }
 }
-//check if the item is found at the queue
-bool atPriorityQueue(const T &value) {
+    bool atPriorityQueue(const T &value) {
     auto it = std::find(this->c.begin(), this->c.end(), value);
     return it != this->c.end();
 }
-inline void make_heaps(){
+    inline void make_heaps(){
     make_heap(this->c.begin(), this->c.end(), this->comp);
 }
-~MyPriorityQueue(){};
+    ~MyPriorityQueue(){};
 
 };
 #endif //FLIGHTSIM_PROJECT_MYPRIORITYQUEUE_H

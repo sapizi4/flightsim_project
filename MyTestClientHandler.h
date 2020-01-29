@@ -2,6 +2,8 @@
 #ifndef FLIGHTSIM_PROJECT_MYTESTCLIENTHANDLER_H
 #define FLIGHTSIM_PROJECT_MYTESTCLIENTHANDLER_H
 #include "ClientHandler.h"
+#include "Solver.h"
+#include "CacheManager.h"
 //foundation check for the future
 class MyTestClientHandler: public ClientHandler{
     Solver<string,string>* solver;

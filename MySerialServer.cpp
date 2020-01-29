@@ -10,14 +10,13 @@ bool MySerialServer::is_open=false;
 ClientHandler* MySerialServer::clientHandler= nullptr;
 //open for serial server
 void MySerialServer::open(int port, ClientHandler *Ch) {
-    //loop that listens to the client on the port we have been given.
     clientHandler = Ch;
     int s = socket(AF_INET, SOCK_STREAM, 0);
     struct sockaddr_in serv;
     serv.sin_addr.s_addr = INADDR_ANY;
     serv.sin_port = htons(port);
     serv.sin_family = AF_INET;
-    if (bind(s, (sockaddr * ) &serv, sizeof(serv)) < 0) {
+    if (bind(s, (sockaddr *) &serv, sizeof(serv)) < 0) {
         cerr << "Bad!" << endl;
     }
     this->myThread = thread(&MySerialServer::connection,port,s);

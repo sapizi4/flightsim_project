@@ -3,12 +3,12 @@
 //
 
 #include "MyParallelServer.h"
-int MyParallerServer::sockFd=0;
-bool MyParallerServer::is_open=false;
+int MyParallelServer::sockFd=0;
+bool MyParallelServer::is_open=false;
 /**
  * handle with clients
  */
-void* MyParallerServer:: handle(void* args) {
+void* MyParallelServer:: handle(void* args) {
     struct client_params* clientStruct=(struct client_params*) args;
     //Handle client
     clientStruct->clientHandler->handleClient(clientStruct->newSockFd);
@@ -18,7 +18,7 @@ void* MyParallerServer:: handle(void* args) {
 /**
  * open multiple threads to clients - max 5
  */
-void MyParallerServer::open(int port, ClientHandler *ch) {
+void MyParallelServer::open(int port, ClientHandler *ch) {
     int sockfd, portno;
     struct sockaddr_in serv_addr;
     struct client_params* clientStruct = new client_params();
@@ -75,7 +75,7 @@ void MyParallerServer::open(int port, ClientHandler *ch) {
             }
         }
         pthread_t pthread;
-        if (pthread_create(&pthread, nullptr, MyParallerServer::handle, clientStruct) != 0) {
+        if (pthread_create(&pthread, nullptr, MyParallelServer::handle, clientStruct) != 0) {
             perror("failure in thread create");
         }
         setsockopt(newSockFd, SOL_SOCKET, SO_RCVTIMEO, (char *) &timeForever, sizeof(timeForever));
@@ -84,11 +84,11 @@ void MyParallerServer::open(int port, ClientHandler *ch) {
 
 }
 
-void MyParallerServer::stop() {
+void MyParallelServer::closeServer() {
     for (unsigned long thread : this->threads_created) {
         pthread_join(thread, nullptr);
     }
 }
-MyParallerServer:: ~MyParallerServer() {
+MyParallelServer:: ~MyParallelServer() {
     close(this->sockFd);
 }
