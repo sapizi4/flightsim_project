@@ -2,19 +2,19 @@
 
 
 Flight Simulator is a C++ program that interpeters a file with commands to FlightGear program and executing them.
-Creaters : Sapir Zilbershtein & Maor 
+Creaters : Sapir Zilbershtein & Maor Bokobza
 
-Installation
-Clone the files from the project using the webpage or by typing:
+Intrudoction:
+The goal is creating a program that controls the Flight Simulator using a set of commands that will be interpreted and sent to the simulator server. This project is a showcase to our programming experience. It contains: Client-Server communication programming, design pattern, data streaming and parallel programming using Threads.
 
- git clone https://github.com/Ron123456/FlightSimulator
-compile the files in visproject2/mitkadem3 with:
 
- g++ -std=c++14 */*.cpp *.cpp -o a.out -pthread  
-and execute the file with the path to the text file to be parsed as an argument:
-
-./a.out fly.txt
-Usage
-There are many commands you can type in the text file: For example, to open a client that updates variables on port 5402 on localhost type in the text file:
-connectControlClient("127.0.0.1",5402)
-Other commands are Sleep,Print,fucntions,defining variables and etc.
+Instructions for running the simulator:
+Download FlightGear Simulator.
+In the main menu of FlightGear, access the settings and add the following settings in "Additional ‫‪‬‬ ‫‪Settings‬":
+--generic=socket,out,10,127.0.0.1,5400,tcp,generic_small
+--telnet=socket,in,10,127.0.0.1,5402,tcp --httpd=8080
+Open the linux terminal and compile the program:
+g++ -std=c++14 *.cpp -Wall -Wextra -Wshadow -Wnon-virtual-dtor -pedantic -o a.out -pthread
+Put your input text file at the same folder with your .cpp files and run the program with the following command (in the linux terminal):
+./a.out file_name.txt
+Press "Fly!" on FlightGear simulator.
