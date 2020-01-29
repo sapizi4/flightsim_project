@@ -8,7 +8,7 @@ Intrudoction:
 The goal is creating a program that controls the Flight Simulator using a set of commands that will be interpreted and sent to the simulator server. This project is a showcase to our programming experience. It contains: Client-Server communication programming, design pattern, data streaming and parallel programming using Threads.
 
 
-#Instructions for running the simulator:
+Instructions for running the simulator:
 
 Download FlightGear Simulator.
 
