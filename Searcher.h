@@ -1,7 +1,7 @@
 
 
-#ifndef FLIGHTSIM_PROJECT_SERCHER_H
-#define FLIGHTSIM_PROJECT_SERCHER_H
+#ifndef FLIGHTSIM_PROJECT_SEARCHER_H
+#define FLIGHTSIM_PROJECT_SEARCHER_H
 
 //for the searching algorithm
 #include "State.h"
@@ -23,4 +23,4 @@ public:
     ~Searcher(){};
 };
 
-#endif //FLIGHTSIM_PROJECT_SERCHER_H
+#endif //FLIGHTSIM_PROJECT_SEARCHER_H
