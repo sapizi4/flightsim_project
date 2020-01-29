@@ -20,7 +20,7 @@
 #include "MatrixSolver.h"
 #include "BestFirstSearch.h"
 #include "A_Star.h"
-#include "MyParallerServer.h"
+#include "MyParallelServer.h"
 #include "Main.h"
 
 #include <iostream>

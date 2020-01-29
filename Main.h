@@ -4,7 +4,7 @@
 
 #ifndef FLIGHTSIM_PROJECT_MAIN_H
 #define FLIGHTSIM_PROJECT_MAIN_H
-#include "MyParallerServer.h"
+#include "MyParallelServer.h"
 #include "Solver.h"
 #include "Searcher.h"
 #include "CacheManager.h"
@@ -23,7 +23,7 @@ namespace boot{
                 exit(4);
             }
             int port = stoi(argv[1]);
-            Server* myServer = new MyParallerServer();
+            Server* myServer = new MyParallelServer();
             Searcher<string>* searcher = new AStar<string>();
             Solver<string, string>* solver = new MatrixSolver<string, string, string>(searcher);
             CacheManager<string, string>* cache = new FileCacheManager<string, string>();
