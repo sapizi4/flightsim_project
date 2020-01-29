@@ -1,6 +1,6 @@
 
-#ifndef FLIGHTSIM_PROJECT_SERCHABLE_H
-#define FLIGHTSIM_PROJECT_SERCHABLE_H
+#ifndef FLIGHTSIM_PROJECT_SEARCHABLE_H
+#define FLIGHTSIM_PROJECT_SEARCHABLE_H
 
 //define the functionality of a search problem
 
@@ -18,4 +18,4 @@ public:
     virtual list<State<T>*> getAllPossibleStates(State<T>* s) = 0;
     virtual ~Searchable() {};
 };
-#endif //FLIGHTSIM_PROJECT_SERCHABLE_H
+#endif //FLIGHTSIM_PROJECT_SEARCHABLE_H
