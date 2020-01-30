@@ -7,7 +7,7 @@ class Solver{
 public:
 
     virtual Solution solve(Problem problem)=0;
-    ~Solver(){};
+    ~Solver()= default;
 };
 
 #endif //FLIGHTSIM_PROJECT_SOLVER_H
