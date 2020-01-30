@@ -10,7 +10,7 @@ class MyTestClientHandler: public ClientHandler{
     CacheManager<string,string>* cacheManager;
 public:
     MyTestClientHandler(CacheManager<string, string> *pManager, Solver<string, string> *pSolver);
-    void handleClient(int sockFd);
-    void writeTheSolution(int id, const char* buffer);
+    void handleClient(int sockFd) override;
+    //void writeTheSolution(int id, const char* buffer);
 };
 #endif //FLIGHTSIM_PROJECT_MYTESTCLIENTHANDLER_H
