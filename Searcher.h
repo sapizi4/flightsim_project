@@ -17,9 +17,8 @@ protected:
     int numberOfNodesEvaluated{};
 public:
     virtual string search(Searchable<T>* searchable)=0;
-    virtual int getNumberOfNodesEvaluated()=0;
-    virtual double getTotalCost()=0;
+    //virtual int getNumberOfNodesEvaluated()=0;
+    //virtual double getTotalCost()=0;
     ~Searcher()= default;;
 };
-
 #endif //FLIGHTSIM_PROJECT_SEARCHER_H
