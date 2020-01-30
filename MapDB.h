@@ -16,7 +16,7 @@ class MapDB {
     map<string,string> bindTable;
     map<string,double> bindValuesTable;
 public:
-    MapDB() {}
+    MapDB() = default;
 
     map<string, ExpressionCommand *> &getCommandTable() { return commandTable; }
 
@@ -27,6 +27,8 @@ public:
     map<string, double> &getBindValuesTable() { return bindValuesTable; }
     void addCommand(string varName, ExpressionCommand* command);
     ExpressionCommand* getCommand(const string &CommandName);
+
+    void addCommand(const string &varName, ExpressionCommand *command);
 };
 
 #endif //FLIGHTSIM_PROJECT_MAPDB_H
