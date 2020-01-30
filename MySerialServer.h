@@ -5,6 +5,7 @@
 #ifndef FLIGHTSIM_PROJECT_MYSERIALSERVER_H
 #define FLIGHTSIM_PROJECT_MYSERIALSERVER_H
 #include "Server.h"
+#include "Server.h"
 using namespace server_side;
 
 class MySerialServer:public Server{
@@ -14,8 +15,8 @@ class MySerialServer:public Server{
     static bool is_open;
 public:
     static void connection(int port,int s);
-    void open(int port,ClientHandler* clientHandler);
-    void stop();
+    void open(int port,ClientHandler* clientHandler) override;
+    void stop() override;
     inline static bool isOpen(){
         return is_open;
     }
