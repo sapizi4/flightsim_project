@@ -8,11 +8,12 @@ using namespace std;
 
 class BinaryExpression: public Expression {
 protected:
-    Expression* right;
-    Expression* left;
+    BinaryExpression(Expression *left, Expression *right);
+
+    Expression* right{};
+    Expression* left{};
 public:
-    virtual double calculate()=0;
+    double calculate() override =0;
 
 };
-
 #endif //FLIGHTSIM_PROJECT_BINARYEXPRESSION_H
