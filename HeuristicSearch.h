@@ -7,14 +7,14 @@
 #include "Searcher.h"
 #include "Searchable.h"
 template <class T>
-class HeuristicSearch:public Searcher<T>{
+class HeuristicSearch: public Searcher<T>{
 public:
     virtual string search(Searchable<T>* searchable)=0;
     string backTrace(State<T>* goal, Searchable<T>* searchable) {
         this->cost = 0;
         int rowChild,rowFather,colChild,colFather;
         State<T> *start = searchable->getInitialState();
-        string result = "";
+        string result;
         list<State<T>*> backTraceList;
         while (!goal->equals(start)) {
             string name = goal->getState();
@@ -22,11 +22,11 @@ public:
 
             char *divide = const_cast<char *>(name.c_str());
             rowChild = stoi(strtok(divide, ","));
-            colChild = stoi(strtok(NULL, ","));
+            colChild = stoi(strtok(nullptr, ","));
 
             char *divideParent = const_cast<char *>(parentName.c_str());
             rowFather = stoi(strtok(divideParent, ","));
-            colFather = stoi(strtok(NULL, ","));
+            colFather = stoi(strtok(nullptr, ","));
 
             if (rowChild > rowFather) {
                 result += "Down";
@@ -44,7 +44,7 @@ public:
         }
         return result;
     }
-    int getNumberOfNodesEvaluted(){
+    int getNumberOfNodesEvaluated(){
         return this->numberOfNodesEvaluated;
     }
     double getTotalCost(){
@@ -54,4 +54,5 @@ public:
         return abs(state->getRow()-goalState->getRow()+ state->getCol()-goalState->getCol());
     }
 };
+
 #endif //FLIGHTSIM_PROJECT_HEURISTICSEARCH_H
