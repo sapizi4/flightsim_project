@@ -1,7 +1,6 @@
 
 #ifndef FLIGHTSIM_PROJECT_SEARCHABLE_H
 #define FLIGHTSIM_PROJECT_SEARCHABLE_H
-
 //define the functionality of a search problem
 
 #include "State.h"
