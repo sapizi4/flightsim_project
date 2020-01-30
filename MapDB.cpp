@@ -1,7 +1,6 @@
-
 #include "MapDB.h"
 // update or add command into map
-void MapDB::addCommand(string varName, ExpressionCommand *command){
+void MapDB::addCommand(const string& varName, ExpressionCommand *command){
     this->commandTable[varName] = command;
 }
 
