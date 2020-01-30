@@ -10,9 +10,9 @@
 class AssignCommand : public Command {
     int &index;
 public:
-    AssignCommand(int &index);
+    explicit AssignCommand(int &index);
 
-    void execute(const vector<string> &line);
+    void execute(const vector<string> &line) override;
 };
 
 #endif //FLIGHTSIM_PROJECT_ASSIGNCOMMAND_H
