@@ -4,10 +4,10 @@
 
 #ifndef FLIGHTSIM_PROJECT_DFS_H
 #define FLIGHTSIM_PROJECT_DFS_H
+
 #include "GraphSearcher.h"
 
 //dfs algorithm - type of graph searcher
-
 template<class T>
 class DFS:public GraphSearcher<T>{
     string search(Searchable<T>* searchable) {
@@ -37,6 +37,5 @@ class DFS:public GraphSearcher<T>{
         return this->numberOfNodesEvaluated;
     }
 };
-
 
 #endif //FLIGHTSIM_PROJECT_DFS_H
