@@ -6,7 +6,7 @@
 
 #include "State.h"
 #include <vector>
-#include <string.h>
+#include <cstring>
 #include <list>
 #include <iostream>
 using namespace std;
@@ -16,6 +16,6 @@ public:
     virtual State<T>* getInitialState() = 0;
     virtual State<T>* getGoalState() = 0;
     virtual list<State<T>*> getAllPossibleStates(State<T>* s) = 0;
-    virtual ~Searchable() {};
+    virtual ~Searchable() = default;;
 };
 #endif //FLIGHTSIM_PROJECT_SEARCHABLE_H
