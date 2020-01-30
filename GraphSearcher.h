@@ -20,7 +20,7 @@ public:
     string backTrace(State<T>* goal, Searchable<T>* toSearch) {
         int rowChild,rowFather,colChild,colFather;
         State<T> *start = toSearch->getInitialState();
-        string result = "";
+        string result;
         list<State<T> *> backTraceList;
 
         while (!goal->equals(start)) {
@@ -29,11 +29,11 @@ public:
 
             char *divide = const_cast<char *>(name.c_str());
             rowChild = stoi(strtok(divide, ","));
-            colChild = stoi(strtok(NULL, ","));
+            colChild = stoi(strtok(nullptr, ","));
 
             char *divideParent = const_cast<char *>(parentName.c_str());
             rowFather = stoi(strtok(divideParent, ","));
-            colFather = stoi(strtok(NULL, ","));
+            colFather = stoi(strtok(nullptr, ","));
 
             if (rowChild > rowFather) {
                 result += "Down";
