@@ -5,11 +5,11 @@
 #include <istream>
 #include <ostream>
 #include <thread>
-#include <stdlib.h>
+#include <cstdlib>
 #include <netdb.h>
 #include <unistd.h>
 #include <netinet/in.h>
-#include <string.h>
+#include <cstring>
 #include <sys/socket.h>
 using namespace std;
 
@@ -19,7 +19,7 @@ class ClientHandler{
 public:
 
     virtual void handleClient(int sockFd)=0;
-    ~ClientHandler(){};
+    ~ClientHandler()= default;;
 };
 
 #endif //FLIGHTSIM_PROJECT_CLIENTHANDLER_H
