@@ -2,7 +2,6 @@
 
 #ifndef FLIGHTSIM_PROJECT_SEARCHER_H
 #define FLIGHTSIM_PROJECT_SEARCHER_H
-
 //for the searching algorithm
 #include "State.h"
 #include "Searchable.h"
@@ -14,13 +13,13 @@ using namespace std;
 template <class T>
 class Searcher{
 protected:
-    double cost;
-    int numberOfNodesEvaluated;
+    double cost{};
+    int numberOfNodesEvaluated{};
 public:
     virtual string search(Searchable<T>* searchable)=0;
-    virtual int getNumberOfNodesEvaluted()=0;
+    virtual int getNumberOfNodesEvaluated()=0;
     virtual double getTotalCost()=0;
-    ~Searcher(){};
+    ~Searcher()= default;;
 };
 
 #endif //FLIGHTSIM_PROJECT_SEARCHER_H
