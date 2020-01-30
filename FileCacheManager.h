@@ -7,7 +7,7 @@
 #include "CacheManager.h"
 #include <vector>
 #include <map>
-#include <string.h>
+#include <cstring>
 #include <mutex>
 
 
@@ -42,8 +42,8 @@ public:
         fstream table;
         table.open(SOL_TABLE, fstream::in | fstream::out | fstream::app);
         string line;
-        string problem = "";
-        string solution = "";
+        string problem;
+        string solution;
         char p;
         string s;
         char* c;
@@ -70,4 +70,5 @@ public:
         }
     }
 };
+
 #endif //FLIGHTSIM_PROJECT_FILECACHEMANAGER_H
