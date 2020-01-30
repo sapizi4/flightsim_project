@@ -14,16 +14,16 @@ class MatrixSolver:public Solver<Problem,Solution>{
 
 public:
 
-    MatrixSolver(Searcher<T>* searcher){
+    explicit MatrixSolver(Searcher<T>* searcher){
         this->searcher = searcher;
     }
     string solve(string problem){
-        MatrixSearchable<T>* matrix = new MatrixSearchable<T>();
+        auto* matrix = new MatrixSearchable<T>();
         matrix->createMatrix(problem);
         string result = this->searcher->search(matrix);
-
         return result;
     }
 
 };
+
 #endif //FLIGHTSIM_PROJECT_MATRIXSOLVER_H
