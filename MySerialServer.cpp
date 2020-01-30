@@ -1,5 +1,5 @@
 //
-// Created by Sapir on 19/01/2020.
+// Created by maor on 24/01/2020.
 //
 
 #include "MySerialServer.h"
@@ -12,7 +12,7 @@ ClientHandler* MySerialServer::clientHandler= nullptr;
 void MySerialServer::open(int port, ClientHandler *Ch) {
     clientHandler = Ch;
     int s = socket(AF_INET, SOCK_STREAM, 0);
-    struct sockaddr_in serv;
+    struct sockaddr_in serv{};
     serv.sin_addr.s_addr = INADDR_ANY;
     serv.sin_port = htons(port);
     serv.sin_family = AF_INET;
@@ -31,10 +31,10 @@ void MySerialServer::stop() {
 void MySerialServer::connection(int port,int s) {
     int new_sock;
     listen(s, 1);
-    struct sockaddr_in client;
+    struct sockaddr_in client{};
     socklen_t clilen = sizeof(client);
 
-    timeval timeout;
+    timeval timeout{};
     timeout.tv_sec = WAIT_FOR_CONNECTION;
     timeout.tv_usec = 0;
 
