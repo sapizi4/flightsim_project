@@ -4,14 +4,13 @@
 
 #ifndef FLIGHTSIM_PROJECT_A_STAR_H
 #define FLIGHTSIM_PROJECT_A_STAR_H
-
-#include "HeuristicSearcher.h"
+#include "HeuristicSearch.h"
 #include "MyPriorityQueue.h"
 #include <unordered_set>
 #include <map>
 
 template<class T>
-class AStar:public HeuristicSearcher<T>{
+class A_Star:public HeuristicSearch<T>{
     vector<State<T>*> open;
 
 public:
@@ -98,5 +97,6 @@ public:
     }
 
 };
+
 
 #endif //FLIGHTSIM_PROJECT_A_STAR_H
