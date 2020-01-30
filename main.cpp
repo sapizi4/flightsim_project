@@ -1,6 +1,3 @@
-//
-// Created by maor on 29/01/2020.
-//
 #include "MyParallelServer.h"
 #include "Searcher.h"
 #include "A_Star.h"
