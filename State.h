@@ -7,13 +7,13 @@
 template<class T>
 class State{
     T state;
-    double cost;
+    double cost{};
     State<T>* cameFrom;
-    double PathCost;
-    double HeuristicCost;
+    double PathCost{};
+    double HeuristicCost{};
 public:
     //constructor with state
-    State(T state) {
+    explicit State(T state) {
         this->state = state;
     }
     State(){
@@ -21,8 +21,8 @@ public:
         this->HeuristicCost = 0;
         this->PathCost = 0;
     }
-    void setCost(double cost) {
-        this->cost = cost;
+    void setCost(double costToSet) {
+        this->cost = costToSet;
     }
     bool equals(State<T>* other_state) {
         return other_state->getState() == state;
@@ -36,8 +36,8 @@ public:
     T getState(){
         return this->state;
     }
-    void setState(T state){
-        this->state = state;
+    void setState(T stateToSet){
+        this->state = stateToSet;
     }
     State<T>*getFather(){
         return this->cameFrom;
@@ -45,8 +45,8 @@ public:
     double getPathCost() const {
         return PathCost;
     }
-    void setPathCost(double PathCost) {
-        this->PathCost = PathCost;
+    void setPathCost(double pathCost) {
+        this->PathCost = pathCost;
     }
     int getRow(){
         return this->state[0];
@@ -57,11 +57,11 @@ public:
     double getHeuristicCost(){
         return this->HeuristicCost;
     }
-    void setHeuristicCost(double cost){
-        this->HeuristicCost = cost;
+    void setHeuristicCost(double heuristicCost){
+        this->HeuristicCost = heuristicCost;
     }
     //destractor
-    ~State(){};
+    ~State()= default;
 
 };
 #endif //FLIGHTSIM_PROJECT_STATE_H
