@@ -12,7 +12,7 @@ template<class T>
 class BFS:public GraphSearcher<T>{
 public:
 
-    BFS(){};
+    BFS()= default;;
     string search(Searchable<T>* searchable){
         list<State<T>*> open;  // will be treated as a stack
         set<State<T>*> close;
@@ -41,5 +41,6 @@ public:
         return this->numberOfNodesEvaluated;
     }
 };
+;
 
 #endif //FLIGHTSIM_PROJECT_BFS_H
