@@ -21,9 +21,9 @@ class MyParallelServer:public Server{
 public:
     ~MyParallelServer();
     static void* handle(void *args);
-    void open(int port,ClientHandler* clientHandler);
-    void closeServer();
-    static void* connection(void *args);
+    void open(int port,ClientHandler* clientHandler) override;
+    void stop() override;
+    //static void* connection(void *args);
     inline static bool isOpen(){
         return is_open;
     }
