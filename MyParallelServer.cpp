@@ -1,18 +1,19 @@
 //
 // Created by Sapir on 19/01/2020.
 //
-
 #include "MyParallelServer.h"
+#include <pthread.h>
+
 int MyParallelServer::sockFd=0;
 bool MyParallelServer::is_open=false;
 /**
  * handle with clients
  */
 void* MyParallelServer:: handle(void* args) {
-    struct client_params* clientStruct=(struct client_params*) args;
+    auto* clientStruct=(struct client_params*) args;
     //Handle client
     clientStruct->clientHandler->handleClient(clientStruct->newSockFd);
-    return 0;
+    return nullptr;
 }
 
 /**
@@ -20,8 +21,8 @@ void* MyParallelServer:: handle(void* args) {
  */
 void MyParallelServer::open(int port, ClientHandler *ch) {
     int sockfd, portno;
-    struct sockaddr_in serv_addr;
-    struct client_params* clientStruct = new client_params();
+    struct sockaddr_in serv_addr{};
+    auto* clientStruct = new client_params();
     /* First call to socket() function */
     sockfd = socket(AF_INET, SOCK_STREAM, 0);
 
@@ -42,19 +43,19 @@ void MyParallelServer::open(int port, ClientHandler *ch) {
         perror("ERROR on binding");
         exit(1);
     }
-    struct sockaddr_in cli_addr;
+    struct sockaddr_in cli_addr{};
     int clilen, newSockFd;
     listen(sockfd, MAX_CLIENTS);
     clilen = sizeof(cli_addr);
 
-    timeval timeout;
-    timeval timeoutCli;
+    timeval timeout{};
+    timeval timeoutCli{};
 
     while (true) {
         newSockFd = accept(sockfd, (struct sockaddr *) &cli_addr, (socklen_t *) &clilen);
         timeout.tv_usec = 0;
         timeout.tv_sec = 10;
-        timeval timeForever;
+        timeval timeForever{};
         timeForever.tv_sec = WAIT_FOREVER;
         timeForever.tv_usec = 0;
         setsockopt(sockfd, SOL_SOCKET, SO_RCVTIMEO, (char *) &timeout, sizeof(timeout));
@@ -63,13 +64,13 @@ void MyParallelServer::open(int port, ClientHandler *ch) {
         if (newSockFd < 0) {
             if (errno == EWOULDBLOCK) {
                 cout << "timeout!" << endl;
-                closeServer();
+                stop();
                 delete clientStruct;
                 break;
 
             } else {
                 perror("error reading from socket");
-                closeServer();
+                stop();
                 delete clientStruct;
                 break;
             }
@@ -84,11 +85,11 @@ void MyParallelServer::open(int port, ClientHandler *ch) {
 
 }
 
-void MyParallelServer::closeServer() {
+void MyParallelServer::stop() {
     for (unsigned long thread : this->threads_created) {
         pthread_join(thread, nullptr);
     }
 }
 MyParallelServer:: ~MyParallelServer() {
-    close(this->sockFd);
+    close(MyParallelServer::sockFd);
 }
