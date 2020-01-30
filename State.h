@@ -64,4 +64,5 @@ public:
     ~State()= default;
 
 };
+
 #endif //FLIGHTSIM_PROJECT_STATE_H
