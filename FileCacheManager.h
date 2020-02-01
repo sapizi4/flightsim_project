@@ -1,9 +1,10 @@
 //
-// Created by Sapir on 19/01/2020.
+// Created by maor on 24/01/2020.
 //
 
-#ifndef FLIGHTSIM_PROJECT_FILECACHEMANAGER_H
-#define FLIGHTSIM_PROJECT_FILECACHEMANAGER_H
+#ifndef FLIGHTSIM_FILECACHEMANAGER_H
+#define FLIGHTSIM_FILECACHEMANAGER_H
+
 #include "CacheManager.h"
 #include <vector>
 #include <map>
@@ -71,4 +72,5 @@ public:
     }
 };
 
-#endif //FLIGHTSIM_PROJECT_FILECACHEMANAGER_H
+
+#endif //FLIGHTSIM_FILECACHEMANAGER_H

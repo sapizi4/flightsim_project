@@ -1,6 +1,9 @@
+//
+// Created by maor on 24/01/2020.
+//
 
-#ifndef FLIGHTSIM_PROJECT_DATAREADERSERVER_H
-#define FLIGHTSIM_PROJECT_DATAREADERSERVER_H
+#ifndef FLIGHTSIM_DATAREADERSERVER_H
+#define FLIGHTSIM_DATAREADERSERVER_H
 
 #include "thread"
 #include "map"
@@ -8,6 +11,7 @@
 #include "PathsTable.h"
 #include "SymbolTable.h"
 #include "BindingTable.h"
+
 static std::mutex globalMutex;
 #define PARAMETERS_SIZE 23
 #define BUFFER_SIZE 1024
@@ -34,6 +38,7 @@ static std::vector<std::string> pathsVec{"/instrumentation/airspeed-indicator/in
                                          "/controls/flight/flaps",
                                          "/controls/engines/current-engine/throttle",
                                          "/engines/engine/rpm"};
+
 class DataReaderServer {
 
     static bool open;
@@ -44,7 +49,7 @@ class DataReaderServer {
      * Updates the Paths table
      * @param vector vector
      */
-    static void updatePathsTable(std::vector<std::string> vec);
+    //  static void updatePathsTable(std::vector<std::string> vec);
 
     /**
      * Updates symbol table
@@ -60,14 +65,16 @@ class DataReaderServer {
 
 
 public:
-    static void openServer(int port, int hz);
+    void openServer(int port, int hz);
 
     /**
          * @return true if server is open, else false
      */
-    inline static bool isOpen(){ return open;}
+    inline static bool isOpen() { return open; }
 
-    inline static int getSocketFD(){ return sockFd;}
+    inline static int getSocketFD() { return sockFd; }
+
+    void updatePathsTable(vector<std::string> vec);
 };
 
-#endif //FLIGHTSIM_PROJECT_DATAREADERSERVER_H
+#endif //FLIGHTSIM_DATAREADERSERVER_H

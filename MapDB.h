@@ -1,6 +1,9 @@
+//
+// Created by maor on 29/01/2020.
+//
 
-#ifndef FLIGHTSIM_PROJECT_MAPDB_H
-#define FLIGHTSIM_PROJECT_MAPDB_H
+#ifndef FLIGHTSIM_MAPDB_H
+#define FLIGHTSIM_MAPDB_H
 #include <map>
 #include <string>
 #include "Command.h"
@@ -31,4 +34,4 @@ public:
     void addCommand(const string &varName, ExpressionCommand *command);
 };
 
-#endif //FLIGHTSIM_PROJECT_MAPDB_H
+#endif //FLIGHTSIM_MAPDB_H

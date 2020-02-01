@@ -1,9 +1,9 @@
 //
-// Created by Sapir on 29/01/2020.
+// Created by maor on 29/01/2020.
 //
 
-#ifndef FLIGHTSIM_PROJECT_MATRIXSOLVER_H
-#define FLIGHTSIM_PROJECT_MATRIXSOLVER_H
+#ifndef FLIGHTSIM_MATRIXSOLVER_H
+#define FLIGHTSIM_MATRIXSOLVER_H
 #include "Solver.h"
 #include "Searcher.h"
 #include "MatrixSearchable.h"
@@ -26,4 +26,4 @@ public:
 
 };
 
-#endif //FLIGHTSIM_PROJECT_MATRIXSOLVER_H
+#endif //FLIGHTSIM_MATRIXSOLVER_H

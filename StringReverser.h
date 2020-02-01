@@ -1,6 +1,9 @@
+//
+// Created by maor on 24/01/2020.
+//
 
-#ifndef FLIGHTSIM_PROJECT_STRINGREVERSER_H
-#define FLIGHTSIM_PROJECT_STRINGREVERSER_H
+#ifndef FLIGHTSIM_STRINGREVERSER_H
+#define FLIGHTSIM_STRINGREVERSER_H
 #include "Solver.h"
 #include <string>
 
@@ -12,4 +15,4 @@ public:
     string solve(string problem) override;
 
 };
-#endif //FLIGHTSIM_PROJECT_STRINGREVERSER_H
+#endif //FLIGHTSIM_STRINGREVERSER_H

@@ -1,7 +1,9 @@
+//
+// Created by maor on 24/01/2020.
+//
 
-#ifndef FLIGHTSIM_PROJECT_BINDINGTABLE_H
-#define FLIGHTSIM_PROJECT_BINDINGTABLE_H
-
+#ifndef FLIGHTSIM_BINDINGTABLE_H
+#define FLIGHTSIM_BINDINGTABLE_H
 #include <map>
 
 /**
@@ -41,6 +43,4 @@ public:
         return bindTable.find(key) != bindTable.end();
     }
 };
-
-
-#endif //FLIGHTSIM_PROJECT_BINDINGTABLE_H
+#endif //FLIGHTSIM_BINDINGTABLE_H

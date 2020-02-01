@@ -1,9 +1,10 @@
+
 //
-// Created by Sapir on 19/01/2020.
+// Created by maor on 24/01/2020.
 //
 
-#ifndef FLIGHTSIM_PROJECT_MYPARALLELSERVER_H
-#define FLIGHTSIM_PROJECT_MYPARALLELSERVER_H
+#ifndef UNTITLED5_MYPARALLELSERVER_H
+#define UNTITLED5_MYPARALLELSERVER_H
 #define WAIT_FOR_CLIENT 1
 #define WAIT_FOREVER 0
 #define MAX_CLIENTS 5
@@ -28,5 +29,4 @@ public:
         return is_open;
     }
 };
-
-#endif //FLIGHTSIM_PROJECT_MYPARALLELSERVER_H
+#endif //UNTITLED5_MYPARALLELSERVER_H

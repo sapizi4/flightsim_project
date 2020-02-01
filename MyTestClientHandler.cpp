@@ -1,6 +1,7 @@
 //
-// Created by Sapir on 19/01/2020.
+// Created by maor on 24/01/2020.
 //
+
 #include "MyTestClientHandler.h"
 void MyTestClientHandler::handleClient(int sockFd) {
     char buffer[1025];
@@ -8,16 +9,27 @@ void MyTestClientHandler::handleClient(int sockFd) {
     string problem, solution;
     //read from the socket
     while (true) {
-        bzero(buffer, 1025);
-        n = read(sockFd, buffer, 1024);
-        //if there is a problem reading from the socket
-        if (n < 0) {
-            perror("ERROR reading from socket");
-            exit(1);
-        }
-        problem = string(buffer);
-        if (strcmp(buffer, "end") == 0||strcmp(buffer,"end\n")==0) {
-            return;
+        while(true) {
+            bzero(buffer, 1025);
+            n = read(sockFd, buffer, 1024);
+            //if there is a problem reading from the socket
+            if (n < 0) {
+                perror("ERROR reading from socket");
+                exit(1);
+            }
+            problem = "";
+            for(int i = 0; i < strlen(buffer); i++) {
+                if(buffer[i] == '\0') {
+                    continue;
+                }
+                problem += buffer[i];
+            }
+            if (problem.find("end") != string::npos) {
+                int index = problem.find("end");
+                problem = problem.substr(0,(index + 3));
+                problem += "\n";
+                break;
+            }
         }
         //check if problem in cache
         if (this->cacheManager->solution_exist(problem)) {

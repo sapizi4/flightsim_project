@@ -1,8 +1,10 @@
+//
+// Created by maor on 24/01/2020.
+//
 
-#ifndef FLIGHTSIM_PROJECT_PATHSTABLE_H
-#define FLIGHTSIM_PROJECT_PATHSTABLE_H
-
-#include "map"
+#ifndef FLIGHTSIM_PATHSTABLE_H
+#define FLIGHTSIM_PATHSTABLE_H
+#include <map>
 
 class PathsTable {
     std::map<std::string, double> pathTable;
@@ -39,4 +41,4 @@ public:
         return pathTable.find(key) != pathTable.end();
     }
 };
-#endif //FLIGHTSIM_PROJECT_PATHSTABLE_H
+#endif //FLIGHTSIM_PATHSTABLE_H

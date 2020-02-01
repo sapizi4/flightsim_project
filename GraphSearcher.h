@@ -1,9 +1,9 @@
 //
-// Created by Sapir on 24/01/2020.
+// Created by maor on 26/01/2020.
 //
 
-#ifndef FLIGHTSIM_PROJECT_GRAPHSEARCHER_H
-#define FLIGHTSIM_PROJECT_GRAPHSEARCHER_H
+#ifndef FLIGHTSIM_GRAPHSEARCHER_H
+#define FLIGHTSIM_GRAPHSEARCHER_H
 #include "Searcher.h"
 #include "Searchable.h"
 
@@ -14,7 +14,8 @@ class GraphSearcher:public Searcher<T>{
 public:
 
     virtual string search(Searchable<T>* searchable)=0;
-    int getNumberOfNodesEvaluted(){
+
+    virtual int getNumberOfNodesEvaluted(){
         return this->numberOfNodesEvaluated;
     }
     string backTrace(State<T>* goal, Searchable<T>* toSearch) {
@@ -55,4 +56,4 @@ public:
         return this->cost;
     }
 };
-#endif //FLIGHTSIM_PROJECT_GRAPHSEARCHER_H
+#endif //FLIGHTSIM_GRAPHSEARCHER_H

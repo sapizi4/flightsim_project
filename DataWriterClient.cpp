@@ -1,15 +1,20 @@
+//
+// Created by maor on 24/01/2020.
+//
 
+#include <mutex>
 #include "DataWriterClient.h"
 #include "DataReaderServer.h"
-std::string DataWriterClient::message = "";
+std::string DataWriterClient::message;
 
 int DataWriterClient::socketFd = 0;
 /**
  * @param message1 the message from the simulator
  */
 void DataWriterClient::setMessage(const string &message1){
+    mutex globalMutex;
     globalMutex.lock();
-    /* Send message to the server */
+    //Send message to the server
     int n = static_cast<int>(write(getSocketFD(), message1.c_str(), message1.length()));
     globalMutex.unlock();
     if (n < 0) {
@@ -21,12 +26,12 @@ void DataWriterClient::setMessage(const string &message1){
  * @param port we create
  * @param address the ip address.
  */
-void DataWriterClient::createConnection(int port, string address){
+void DataWriterClient::createConnection(int port, const string& address){
     int sockfd;
-    struct sockaddr_in serv_addr;
+    struct sockaddr_in serv_addr{};
     struct hostent *server;
 
-    /* Create a socket point */
+    //Create a socket point
     sockfd = socket(AF_INET, SOCK_STREAM, 0);
     socketFd = sockfd;
     if (sockfd < 0) {
@@ -36,7 +41,7 @@ void DataWriterClient::createConnection(int port, string address){
 
     server = gethostbyname(address.c_str());
 
-    if (server == NULL) {
+    if (server == nullptr) {
         fprintf(stderr, "ERROR, no such host\n");
         exit(0);
     }

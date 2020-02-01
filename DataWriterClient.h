@@ -1,18 +1,18 @@
 //
-// Created by Sapir on 10/01/2020.
+// Created by maor on 24/01/2020.
 //
 
-#ifndef FLIGHTSIM_PROJECT_DATAWRITERCLIENT_H
-#define FLIGHTSIM_PROJECT_DATAWRITERCLIENT_H
-#include <stdio.h>
-#include <stdlib.h>
+#ifndef FLIGHTSIM_DATAWRITERCLIENT_H
+#define FLIGHTSIM_DATAWRITERCLIENT_H
+
+#include <cstdio>
+#include <cstdlib>
 #include <netdb.h>
 #include <sys/socket.h>
 #include <unistd.h>
 #include <netinet/in.h>
 #include "Command.h"
-
-#include <string.h>
+#include <cstring>
 using namespace std;
 
 
@@ -23,11 +23,11 @@ public:
     //static because its depend on state
     static void setMessage(const string &message1);
 
-    static void createConnection(int port, string address);
+    static void createConnection(int port, const string& address);
 
     inline static int getSocketFD(){
         return socketFd;
     }
 
 };
-#endif //FLIGHTSIM_PROJECT_DATAWRITERCLIENT_H
+#endif //FLIGHTSIM_DATAWRITERCLIENT_H

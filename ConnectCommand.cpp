@@ -1,3 +1,6 @@
+//
+// Created by maor on 29/01/2020.
+//
 
 #include "ConnectCommand.h"
 #include "thread"
@@ -10,7 +13,7 @@ void ConnectCommand::execute(const vector<string> &cur_lex) {
     string adress;
     try {
         adress = cur_lex[index + 1];
-        port = (int)(shuntingYard.algorithm(cur_lex[index + 2]));
+        port = (int)(Shuntingyard::algorithm(cur_lex[index + 2]));
         index+=3;
     } catch (...) {
         cerr << "ERROR : WRONG PASSING PARAMETERS"<< endl;

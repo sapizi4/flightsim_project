@@ -1,3 +1,6 @@
+//
+// Created by maor on 29/01/2020.
+//
 
 #include <stack>
 #include <iostream>
@@ -6,9 +9,7 @@
 
 using namespace std;
 
-Shuntingyard::Shuntingyard() {
-
-}
+Shuntingyard::Shuntingyard() = default;
 
 unsigned int Shuntingyard::precedence(char op) {
     switch(op) {
@@ -22,26 +23,18 @@ unsigned int Shuntingyard::precedence(char op) {
 }
 
 bool Shuntingyard::isDigit(char c){ //checks if the char is a digit
-    if(((c >= 48) && (c <= 57)) || (c == '.')){
-        return true;
-    }else {
-        return false;
-    }
+    return ((c >= 48) && (c <= 57)) || (c == '.');
 }
 
 bool Shuntingyard::isOperator(char c){ //checks if the char is an operator
-    if((c == '+') || (c == '-') || (c == '/') || (c == '*')) {
-        return true;
-    }else {
-        return false;
-    }
+    return (c == '+') || (c == '-') || (c == '/') || (c == '*');
 }
 
 
 
 
 double Shuntingyard:: algorithm(string exp){
-    string output = "";
+    string output;
     vector<string>nums;
     vector<string>str_vec;
     stack<string> operators;
@@ -59,7 +52,7 @@ double Shuntingyard:: algorithm(string exp){
         }
         else if(c == '(') { //the character is a (
             operators.push(token);
-            if((!last == '$')){//there was something before the (
+            if(last != '$'){//there was something before the (
                 nums.push_back(output);
             }
         } else if(c == ')') { //the character is a )
@@ -72,9 +65,7 @@ double Shuntingyard:: algorithm(string exp){
                 lastop = operators.top(); //go to the next operator in the stack.
                 lastoperator = lastop[0];
             }
-            if(lastoperator == '('){
-                operators.pop();
-            }
+            operators.pop();
 
         }  else if(isOperator(c)){ //the character c is an operator.
             if(c == '-'){//check if an operator or negative.
@@ -115,7 +106,7 @@ double Shuntingyard:: algorithm(string exp){
         else {
             nums.push_back(output);
             output="";
-            for(auto str:nums){
+            for(const auto& str:nums){
                 str_vec.push_back(str);
             }
             str_vec.push_back(operators.top());
@@ -126,11 +117,10 @@ double Shuntingyard:: algorithm(string exp){
 
 }
 
-Shuntingyard::~Shuntingyard() {
-
-}
+Shuntingyard::~Shuntingyard() = default;
 
 string Shuntingyard::extract_string(const string &str) {
+    mutex globalMutex;
     const char *pExp = str.c_str();
     string newExp;
     string var;
@@ -157,7 +147,7 @@ string Shuntingyard::extract_string(const string &str) {
     return newExp;
 }
 
-Expression *Shuntingyard::string_to_exp(vector<string> shunt_vec) {
+Expression *Shuntingyard::string_to_exp(const vector<string>& shunt_vec) {
     char oper;
     stack<Expression *> stack;
     Expression *newExp;
@@ -208,7 +198,7 @@ bool Shuntingyard::check_if_neg(const string &exp) {
         else
             // if there is more things in the string, return false.
         if(isOperator(*c) && check) return false;
-        c++;
+        //c++;
     }
     return true;
 }

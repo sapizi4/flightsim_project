@@ -1,18 +1,21 @@
-#ifndef FLIGHTSIM_PROJECT_OPENSERVERCOMMAND_H
-#define FLIGHTSIM_PROJECT_OPENSERVERCOMMAND_H
+//
+// Created by maor on 29/01/2020.
+//
+
+/*#ifndef FLIGHTSIM_OPENSERVERCOMMAND_H
+#define FLIGHTSIM_OPENSERVERCOMMAND_H
 #include <string>
 #include "Command.h"
 #include "map"
-#include "DataReaderServer.h"
+#include "DataReaderServer.h" */
 /**
  * A class which opens a thread which opens a server that listens to a specific given port
  */
-// TODO: finish class
-class OpenServerCommand : public Command {
+/*class OpenServerCommand : public Command {
     int &index;
 
 public:
-    void execute(const vector<string> &cur_lex);
-    OpenServerCommand(int &index);
+    void execute(const vector<string> &cur_lex) override;
+    explicit OpenServerCommand(int &index);
 };
-#endif //FLIGHTSIM_PROJECT_OPENSERVERCOMMAND_H
+#endif //FLIGHTSIM_OPENSERVERCOMMAND_H*/

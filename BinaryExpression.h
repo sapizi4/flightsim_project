@@ -1,7 +1,9 @@
+//
+// Created by maor on 29/01/2020.
+//
 
-#ifndef FLIGHTSIM_PROJECT_BINARYEXPRESSION_H
-#define FLIGHTSIM_PROJECT_BINARYEXPRESSION_H
-
+#ifndef FLIGHTSIM_BINARYEXPRESSION_H
+#define FLIGHTSIM_BINARYEXPRESSION_H
 #include "Number.h"
 
 using namespace std;
@@ -16,4 +18,5 @@ public:
     double calculate() override =0;
 
 };
-#endif //FLIGHTSIM_PROJECT_BINARYEXPRESSION_H
+
+#endif //FLIGHTSIM_BINARYEXPRESSION_H

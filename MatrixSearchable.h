@@ -1,9 +1,9 @@
 //
-// Created by Sapir on 29/01/2020.
+// Created by maor on 29/01/2020.
 //
 
-#ifndef FLIGHTSIM_PROJECT_MATRIXSEARCHABLE_H
-#define FLIGHTSIM_PROJECT_MATRIXSEARCHABLE_H
+#ifndef FLIGHTSIM_MATRIXSEARCHABLE_H
+#define FLIGHTSIM_MATRIXSEARCHABLE_H
 #include "Searchable.h"
 #include <sstream>
 #include <fstream>
@@ -66,10 +66,18 @@ public:
         it = strings.begin();
 
         //add the string to the row of the basicString
-        while (count != size - 3) {
+        /*while (count != size - 3) {
             string newRow = (*it);
             this->addLineToMatrix(newRow);
             it++;
+            count++;
+        }*/
+
+        for (string s: strings) {
+            if (count == size - 3) {
+                break;
+            }
+            this->addLineToMatrix(s);
             count++;
         }
 
@@ -142,4 +150,6 @@ public:
 
 };
 
-#endif //FLIGHTSIM_PROJECT_MATRIXSEARCHABLE_H
+
+
+#endif //FLIGHTSIM_MATRIXSEARCHABLE_H

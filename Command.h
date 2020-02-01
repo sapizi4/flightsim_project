@@ -1,6 +1,9 @@
-#ifndef FLIGHTSIM_PROJECT_COMMAND_H
-#define FLIGHTSIM_PROJECT_COMMAND_H
+//
+// Created by maor on 29/01/2020.
+//
 
+#ifndef FLIGHTSIM_COMMAND_H
+#define FLIGHTSIM_COMMAND_H
 #include <iostream>
 #include <string>
 #include <list>
@@ -13,7 +16,6 @@ using namespace std;
 class Command {
 public:
     virtual void execute(const vector<string>&lexer)=0;
-    ~Command(){};
+    ~Command()= default;
 };
-
-#endif //FLIGHTSIM_PROJECT_COMMAND_H
+#endif //FLIGHTSIM_COMMAND_H

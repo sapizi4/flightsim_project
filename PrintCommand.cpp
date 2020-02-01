@@ -1,3 +1,6 @@
+//
+// Created by maor on 29/01/2020.
+//
 
 #include "PrintCommand.h"
 #include "SymbolTable.h"
@@ -22,6 +25,6 @@ void PrintCommand::execute(const vector<string> &cur_lex) {
     cout << "\n";
 }
 
-PrintCommand::PrintCommand(int &index):index(index) {
+PrintCommand::PrintCommand(int &index, int &i) : index(i) {
 
 }

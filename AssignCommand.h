@@ -1,7 +1,9 @@
+//
+// Created by maor on 24/01/2020.
+//
 
-#ifndef FLIGHTSIM_PROJECT_ASSIGNCOMMAND_H
-#define FLIGHTSIM_PROJECT_ASSIGNCOMMAND_H
-
+#ifndef FLIGHTSIM_ASSIGNCOMMAND_H
+#define FLIGHTSIM_ASSIGNCOMMAND_H
 #include "Command.h"
 #include "Shuntingyard.h"
 #include "BindingTable.h"
@@ -15,4 +17,4 @@ public:
     void execute(const vector<string> &line) override;
 };
 
-#endif //FLIGHTSIM_PROJECT_ASSIGNCOMMAND_H
+#endif //FLIGHTSIM_ASSIGNCOMMAND_H

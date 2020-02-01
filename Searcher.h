@@ -1,7 +1,9 @@
+//
+// Created by maor on 24/01/2020.
+//
 
-
-#ifndef FLIGHTSIM_PROJECT_SEARCHER_H
-#define FLIGHTSIM_PROJECT_SEARCHER_H
+#ifndef FLIGHTSIM_SEARCHER_H
+#define FLIGHTSIM_SEARCHER_H
 //for the searching algorithm
 #include "State.h"
 #include "Searchable.h"
@@ -21,4 +23,4 @@ public:
     //virtual double getTotalCost()=0;
     ~Searcher()= default;;
 };
-#endif //FLIGHTSIM_PROJECT_SEARCHER_H
+#endif //FLIGHTSIM_SEARCHER_H

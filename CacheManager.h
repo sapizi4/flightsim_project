@@ -1,6 +1,9 @@
+//
+// Created by maor on 24/01/2020.
+//
 
-#ifndef FLIGHTSIM_PROJECT_CACHEMANAGER_H
-#define FLIGHTSIM_PROJECT_CACHEMANAGER_H
+#ifndef FLIGHTSIM_CACHEMANAGER_H
+#define FLIGHTSIM_CACHEMANAGER_H
 #define SOL_TABLE "solutions.txt"
 #include <map>
 #include <string>
@@ -19,8 +22,8 @@ public:
     virtual Solution get_solution(Problem p)=0;
     //solve the problem and save it to the disk
     virtual void save_solution(Problem p,Solution S)=0;
-    ~CacheManager()= default;;
+    ~CacheManager()= default;
 
 
 };
-#endif //FLIGHTSIM_PROJECT_CACHEMANAGER_H
+#endif //FLIGHTSIM_CACHEMANAGER_H

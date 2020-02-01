@@ -1,3 +1,6 @@
+//
+// Created by maor on 29/01/2020.
+//
 
 #include "Lexer.h"
 #include <vector>
@@ -13,7 +16,7 @@ vector<string> Lexer::get_lexer() {
     return this->cur_lex;
 }
 
-vector<string> Lexer::split_from_file(string fileName) {
+vector<string> Lexer::split_from_file(const string& fileName) {
     vector<string> vector;
     string tmp;
     fstream file;
@@ -30,12 +33,12 @@ vector<string> Lexer::split_from_file(string fileName) {
  * @param the lines in the file.
  * @return vector of words in the right order
  */
-vector<string> Lexer::fromStringToExp(vector<string> commands) {
+vector<string> Lexer::fromStringToExp(const vector<string>& commands) {
     vector<string> words;
     bool check;
     string s;
     // goes all the lines in the file.
-    for (auto const item:commands) {
+    for (auto const& item:commands) {
         // if there is a '=' in the line.
         if (item.find('=') != std::string::npos) {
             check = false;
@@ -64,7 +67,7 @@ vector<string> Lexer::fromStringToExp(vector<string> commands) {
                 if (!check) {
                     check = true;
                     // if there is no '=' in the vector of words, put it.
-                    words.push_back("=");
+                    words.emplace_back("=");
                 }
             }
             // if there is no '=' in line but there is ,
@@ -102,7 +105,7 @@ vector<string> Lexer::fromStringToExp(vector<string> commands) {
     }
     vector<string> final;
     for (auto const &item:words) {
-        if(item == "") continue;
+        if(item.empty()) continue;
         final.push_back(item);
     }
     // return the vector of string.
@@ -118,7 +121,7 @@ bool Lexer::isOperator(string & c) {
 
 vector<string> Lexer::split_from_command_line() {
     bool keep=true;
-    string tmp,line,nline="";
+    string tmp,line,nline;
     char c;
     while(keep) {
         cout << "Please enter new command line"<<endl;
@@ -128,8 +131,8 @@ vector<string> Lexer::split_from_command_line() {
         while (ss.good()) {
             ss >> tmp;
             nline="";
-            for (int i = 0; i < tmp.size(); i++) {
-                c = tmp[i];
+            for (char i : tmp) {
+                c = i;
                 if (c>=0&&c<=127) {
                     nline += c;
                 } else {

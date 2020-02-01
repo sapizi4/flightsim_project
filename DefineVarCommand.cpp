@@ -1,8 +1,8 @@
+//
+// Created by maor on 29/01/2020.
+//
 
 #include "DefineVarCommand.h"
-
-#include <utility>
-#include <cstring>
 #include "SymbolTable.h"
 #include "BindingTable.h"
 #include "PathsTable.h"
@@ -15,7 +15,7 @@ void DefineVarCommand::execute(const vector<string> &cur_lex) {
     index++;
     string key_word = cur_lex[index];
     index += 2; // skip '='
-    if (cur_lex[index].compare("bind")==0||cur_lex[index].compare(" bind")==0) {
+    if (cur_lex[index]=="bind"||cur_lex[index]==" bind") {
         ++index;
         string val = cur_lex[index];
         if (val[1] == '/') { // start of a path
@@ -43,7 +43,7 @@ void DefineVarCommand::execute(const vector<string> &cur_lex) {
         string val = cur_lex[index];
         globalMutex.lock();
         //update symbol table
-        SymbolTable::instance()->setValue(key_word,shuntingyard.algorithm(shuntingyard.extract_string(val)));
+        SymbolTable::instance()->setValue(key_word,Shuntingyard::algorithm(Shuntingyard::extract_string(val)));
         globalMutex.unlock();
     }
     ++index;

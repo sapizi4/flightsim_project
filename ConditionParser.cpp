@@ -1,12 +1,11 @@
 //
-// Created by Sapir on 10/01/2020.
+// Created by maor on 29/01/2020.
 //
 
 #include "ConditionParser.h"
 #include "Lexer.h"
 #include "Shuntingyard.h"
-#include "Parser.h"
-#include "SymbolTable.h"
+
 /**
  * @param line the words
  */
@@ -29,7 +28,7 @@ bool ConditionParser::isOperator(const string &oper) {
 bool ConditionParser::checkCondition(const vector<string>&cur_lex) {
     ++index;
     Shuntingyard shuntingyard;
-    double left = shuntingyard.algorithm(shuntingyard.extract_string(cur_lex[index]));
+    double left = Shuntingyard::algorithm(Shuntingyard::extract_string(cur_lex[index]));
     ++index;
     string oper = cur_lex[index];
     if(cur_lex[index+1][0]=='='){
@@ -40,7 +39,7 @@ bool ConditionParser::checkCondition(const vector<string>&cur_lex) {
         exit(1);
     }
     ++index;
-    double  right = shuntingyard.algorithm(shuntingyard.extract_string(cur_lex[index]));
+    double  right = Shuntingyard::algorithm(Shuntingyard::extract_string(cur_lex[index]));
     ++index;
     if(oper==">"){
         return isBigger(left,right);
@@ -55,6 +54,7 @@ bool ConditionParser::checkCondition(const vector<string>&cur_lex) {
     }else if(oper=="!="){
         return !isEqual(left,right);
     }
+    return false;
 }
 
 bool ConditionParser::isBigger(double left, double right) {

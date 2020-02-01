@@ -1,28 +1,13 @@
+//
+// Created by maor on 29/01/2020.
+//
 
 #include "Plus.h"
-using namespace std;
+
+Plus::Plus(Expression *left, Expression *right) : BinaryExpression(left, right) {}
+
+Plus::~Plus() = default;
 
 double Plus::calculate() {
-    double result = left->calculate()+right->calculate();
-    return result;
-}
-Plus:: Plus(Number val1,Number val2){
-    this->left = new Number(val1);
-    this->right = new Number(val2);
-
-}
-Plus:: Plus(Expression* val1,Number val2){
-    this->left = val1;
-    this->right = new Number(val2);
-
-}
-Plus:: Plus(Number val1, Expression* val2){
-    this->left = new Number(val1);
-    this->right = val2;
-
-}
-Plus:: Plus(Expression* val1,Expression* val2){
-    this->right = val2;
-    this->left = val1;
-
+    return this->left->calculate() + this->right->calculate();
 }

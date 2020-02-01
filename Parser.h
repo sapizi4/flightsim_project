@@ -1,7 +1,9 @@
-
-#ifndef FLIGHTSIM_PROJECT_PARSER_H
-#define FLIGHTSIM_PROJECT_PARSER_H
-
+//
+// Created by maor on 29/01/2020.
+//
+/*
+#ifndef FLIGHTSIM_PARSER_H
+#define FLIGHTSIM_PARSER_H
 #include <vector>
 #include <string>
 #include <map>
@@ -25,4 +27,4 @@ public:
     void run(const vector<string> &cur_lex);
 
 };
-#endif //FLIGHTSIM_PROJECT_PARSER_H
+#endif //FLIGHTSIM_PARSER_H*/

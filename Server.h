@@ -1,5 +1,9 @@
-#ifndef FLIGHTSIM_PROJECT_SERVER_H
-#define FLIGHTSIM_PROJECT_SERVER_H
+//
+// Created by maor on 24/01/2020.
+//
+
+#ifndef FLIGHTSIM_SERVER_H
+#define FLIGHTSIM_SERVER_H
 #define BUFFER_SIZE 1024
 #include "ClientHandler.h"
 #include <iostream>
@@ -21,4 +25,4 @@ namespace server_side{
         ~Server()= default;
     };
 }
-#endif //FLIGHTSIM_PROJECT_SERVER_H
+#endif //FLIGHTSIM_SERVER_H

@@ -1,9 +1,9 @@
 //
-// Created by Sapir on 19/01/2020.
+// Created by maor on 24/01/2020.
 //
 
-#ifndef FLIGHTSIM_PROJECT_BFS_H
-#define FLIGHTSIM_PROJECT_BFS_H
+#ifndef FLIGHTSIM_BFS_H
+#define FLIGHTSIM_BFS_H
 #include "GraphSearcher.h"
 
 //bfs algorithm - type of graph searcher
@@ -12,7 +12,7 @@ template<class T>
 class BFS:public GraphSearcher<T>{
 public:
 
-    BFS()= default;;
+    BFS()= default;
     string search(Searchable<T>* searchable){
         list<State<T>*> open;  // will be treated as a stack
         set<State<T>*> close;
@@ -41,6 +41,5 @@ public:
         return this->numberOfNodesEvaluated;
     }
 };
-;
 
-#endif //FLIGHTSIM_PROJECT_BFS_H
+#endif //FLIGHTSIM_BFS_H

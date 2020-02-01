@@ -1,6 +1,9 @@
+//
+// Created by maor on 24/01/2020.
+//
 
-#ifndef FLIGHTSIM_PROJECT_MYTESTCLIENTHANDLER_H
-#define FLIGHTSIM_PROJECT_MYTESTCLIENTHANDLER_H
+#ifndef FLIGHTSIM_MYTESTCLIENTHANDLER_H
+#define FLIGHTSIM_MYTESTCLIENTHANDLER_H
 #include "ClientHandler.h"
 #include "Solver.h"
 #include "CacheManager.h"
@@ -13,4 +16,4 @@ public:
     void handleClient(int sockFd) override;
     //void writeTheSolution(int id, const char* buffer);
 };
-#endif //FLIGHTSIM_PROJECT_MYTESTCLIENTHANDLER_H
+#endif //FLIGHTSIM_MYTESTCLIENTHANDLER_H

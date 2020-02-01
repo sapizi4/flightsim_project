@@ -1,9 +1,9 @@
 //
-// Created by Sapir on 19/01/2020.
+// Created by maor on 24/01/2020.
 //
 
-#ifndef FLIGHTSIM_PROJECT_A_STAR_H
-#define FLIGHTSIM_PROJECT_A_STAR_H
+#ifndef FLIGHTSIM_A_STAR_H
+#define FLIGHTSIM_A_STAR_H
 #include "HeuristicSearch.h"
 #include "MyPriorityQueue.h"
 #include <unordered_set>
@@ -98,5 +98,4 @@ public:
 
 };
 
-
-#endif //FLIGHTSIM_PROJECT_A_STAR_H
+#endif //FLIGHTSIM_A_STAR_H

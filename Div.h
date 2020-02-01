@@ -1,21 +1,24 @@
+//
+// Created by maor on 29/01/2020.
+//
 
-#ifndef FLIGHTSIM_PROJECT_DIV_H
-#define FLIGHTSIM_PROJECT_DIV_H
-
+#ifndef FLIGHTSIM_DIV_H
+#define FLIGHTSIM_DIV_H
 #include "BinaryExpression.h"
-#include "Plus.h"
+#include "Expression.h"
 
-using namespace std;
-
-class Div: public BinaryExpression {
+/**
+ * div operator class
+ */
+class Div : public BinaryExpression {
 public:
-    Div(Number val1,Number val2);
-    Div(Expression* val1,Number val2);
-    Div(Number val1, Expression* val2);
-    Div(Expression* val1,Expression* val2);
-    double calculate();
-    ~Div();
+    Div(Expression *left, Expression *right);
 
+    virtual ~Div();
+
+    double calculate() override;
 };
 
-#endif //FLIGHTSIM_PROJECT_DIV_H
+
+
+#endif //FLIGHTSIM_DIV_H

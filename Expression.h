@@ -1,7 +1,9 @@
+//
+// Created by maor on 29/01/2020.
+//
 
-
-#ifndef FLIGHTSIM_PROJECT_EXPRESSION_H
-#define FLIGHTSIM_PROJECT_EXPRESSION_H
+#ifndef FLIGHTSIM_EXPRESSION_H
+#define FLIGHTSIM_EXPRESSION_H
 
 #include <map>
 #include <list>
@@ -19,4 +21,5 @@ public:
     virtual double calculate() =0;
 
 };
-#endif //FLIGHTSIM_PROJECT_EXPRESSION_H
+
+#endif //FLIGHTSIM_EXPRESSION_H

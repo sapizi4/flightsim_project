@@ -1,6 +1,6 @@
 //
-// Created by Sapir on 19/01/2020.
-//
+// Created by maor on 24/01/2020.
+//י
 #include "MyParallelServer.h"
 #include <pthread.h>
 
@@ -31,7 +31,7 @@ void MyParallelServer::open(int port, ClientHandler *ch) {
         exit(1);
     }
     clientStruct->clientHandler = ch;
-    /* Initialize socket structure */
+    // Initialize socket structure
     bzero((char *) &serv_addr, sizeof(serv_addr));
     portno = port;
 
@@ -52,7 +52,13 @@ void MyParallelServer::open(int port, ClientHandler *ch) {
     timeval timeoutCli{};
 
     while (true) {
+        printf("\n before");
+        fflush(stdout);
         newSockFd = accept(sockfd, (struct sockaddr *) &cli_addr, (socklen_t *) &clilen);
+
+        printf("\n after ");
+        fflush(stdout);
+
         timeout.tv_usec = 0;
         timeout.tv_sec = 10;
         timeval timeForever{};

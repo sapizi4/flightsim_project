@@ -1,10 +1,9 @@
 //
-// Created by Sapir on 19/01/2020.
+// Created by maor on 24/01/2020.
 //
 
-#ifndef FLIGHTSIM_PROJECT_MYSERIALSERVER_H
-#define FLIGHTSIM_PROJECT_MYSERIALSERVER_H
-#include "Server.h"
+#ifndef FLIGHTSIM_MYSERIALSERVER_H
+#define FLIGHTSIM_MYSERIALSERVER_H
 #include "Server.h"
 using namespace server_side;
 
@@ -22,4 +21,5 @@ public:
     }
 
 };
-#endif //FLIGHTSIM_PROJECT_MYSERIALSERVER_H
+
+#endif //FLIGHTSIM_MYSERIALSERVER_H

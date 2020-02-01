@@ -1,8 +1,9 @@
+//
+// Created by maor on 29/01/2020.
+//
 
-#ifndef FLIGHTSIM_PROJECT_DEFINEVARCOMMAND_H
-#define FLIGHTSIM_PROJECT_DEFINEVARCOMMAND_H
-
-
+#ifndef FLIGHTSIM_DEFINEVARCOMMAND_H
+#define FLIGHTSIM_DEFINEVARCOMMAND_H
 #include "Command.h"
 #include "string"
 #include "MapDB.h"
@@ -13,9 +14,9 @@ class DefineVarCommand : public Command {
     string name;
     string bindPath;
     Expression* expression = nullptr;
-    MapDB* db;
+    MapDB* db{};
 public:
-    void execute(const vector<string>&cur_lex);
-    DefineVarCommand(int &index);
+    void execute(const vector<string>&cur_lex) override;
+    explicit DefineVarCommand(int &index);
 };
-#endif //FLIGHTSIM_PROJECT_DEFINEVARCOMMAND_H
+#endif //FLIGHTSIM_DEFINEVARCOMMAND_H

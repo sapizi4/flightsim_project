@@ -1,5 +1,9 @@
-#ifndef FLIGHTSIM_PROJECT_SYMBOLTABLE_H
-#define FLIGHTSIM_PROJECT_SYMBOLTABLE_H
+//
+// Created by maor on 29/01/2020.
+//
+
+#ifndef FLIGHTSIM_SYMBOLTABLE_H
+#define FLIGHTSIM_SYMBOLTABLE_H
 #include <mutex>
 #include "map"
 #include <iostream>
@@ -50,5 +54,4 @@ public:
 
     inline std::map<std::string, double>::iterator getEnd() { return symTable.end(); }
 };
-
-#endif //FLIGHTSIM_PROJECT_SYMBOLTABLE_H
+#endif //FLIGHTSIM_SYMBOLTABLE_H

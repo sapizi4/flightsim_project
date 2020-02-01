@@ -1,6 +1,9 @@
+//
+// Created by maor on 24/01/2020.
+//
 
-#ifndef FLIGHTSIM_PROJECT_SEARCHABLE_H
-#define FLIGHTSIM_PROJECT_SEARCHABLE_H
+#ifndef FLIGHTSIM_SEARCHABLE_H
+#define FLIGHTSIM_SEARCHABLE_H
 //define the functionality of a search problem
 
 #include "State.h"
@@ -17,4 +20,4 @@ public:
     virtual list<State<T>*> getAllPossibleStates(State<T>* s) = 0;
     virtual ~Searchable() = default;;
 };
-#endif //FLIGHTSIM_PROJECT_SEARCHABLE_H
+#endif //FLIGHTSIM_SEARCHABLE_H

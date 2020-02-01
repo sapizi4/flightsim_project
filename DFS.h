@@ -1,9 +1,9 @@
 //
-// Created by Sapir on 19/01/2020.
+// Created by maor on 24/01/2020.
 //
 
-#ifndef FLIGHTSIM_PROJECT_DFS_H
-#define FLIGHTSIM_PROJECT_DFS_H
+#ifndef FLIGHTSIM_DFS_H
+#define FLIGHTSIM_DFS_H
 #include "GraphSearcher.h"
 
 //dfs algorithm - type of graph searcher
@@ -37,5 +37,4 @@ class DFS:public GraphSearcher<T>{
         return this->numberOfNodesEvaluated;
     }
 };
-
-#endif //FLIGHTSIM_PROJECT_DFS_H
+#endif //FLIGHTSIM_DFS_H

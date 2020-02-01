@@ -1,9 +1,9 @@
 //
-// Created by Sapir on 24/01/2020.
+// Created by maor on 24/01/2020.
 //
 
-#ifndef FLIGHTSIM_PROJECT_STATE_H
-#define FLIGHTSIM_PROJECT_STATE_H
+#ifndef FLIGHTSIM_STATE_H
+#define FLIGHTSIM_STATE_H
 template<class T>
 class State{
     T state;
@@ -65,4 +65,4 @@ public:
 
 };
 
-#endif //FLIGHTSIM_PROJECT_STATE_H
+#endif //FLIGHTSIM_STATE_H

@@ -1,3 +1,6 @@
+//
+// Created by maor on 29/01/2020.
+//
 
 #include "IfCommand.h"
 void IfCommand::execute(const vector<string> &lexer){

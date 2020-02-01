@@ -1,9 +1,10 @@
 //
-// Created by Sapir on 24/01/2020.
+// Created by maor on 24/01/2020.
 //
 
-#ifndef FLIGHTSIM_PROJECT_HEURISTICSEARCH_H
-#define FLIGHTSIM_PROJECT_HEURISTICSEARCH_H
+#ifndef FLIGHTSIM_HEURISTICSEARCH_H
+#define FLIGHTSIM_HEURISTICSEARCH_H
+
 #include "Searcher.h"
 #include "Searchable.h"
 template <class T>
@@ -55,4 +56,4 @@ public:
     }
 };
 
-#endif //FLIGHTSIM_PROJECT_HEURISTICSEARCH_H
+#endif //FLIGHTSIM_HEURISTICSEARCH_H

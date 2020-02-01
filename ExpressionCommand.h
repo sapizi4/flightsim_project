@@ -1,6 +1,10 @@
+//
+// Created by maor on 29/01/2020.
+//
 
-#ifndef FLIGHTSIM_PROJECT_EXPRESSIONCOMMAND_H
-#define FLIGHTSIM_PROJECT_EXPRESSIONCOMMAND_H
+#ifndef FLIGHTSIM_EXPRESSIONCOMMAND_H
+#define FLIGHTSIM_EXPRESSIONCOMMAND_H
+
 #include "Command.h"
 #include "Expression.h"
 
@@ -8,10 +12,10 @@ class ExpressionCommand:public Expression{
 protected:
     Command *command;
     vector<string> lexer;
-    int index;
+    int index{};
 public:
-    ExpressionCommand(Command *command, const vector<string> &cur_lex);
+    ExpressionCommand(Command *command, vector<string> cur_lex);
 
-    virtual double calculate();
+    double calculate() override;
 };
-#endif //FLIGHTSIM_PROJECT_EXPRESSIONCOMMAND_H
+#endif //FLIGHTSIM_EXPRESSIONCOMMAND_H

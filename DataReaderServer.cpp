@@ -1,15 +1,14 @@
-
+//
+// Created by maor on 24/01/2020.
+//
 #include "DataReaderServer.h"
-
-#include <stdio.h>
-#include <stdlib.h>
-#include <netdb.h>
+#include <cstdio>
+#include <cstdlib>
 #include <unistd.h>
 #include <netinet/in.h>
-#include <string.h>
+#include <cstring>
 #include <sys/socket.h>
-#include <iostream>
-#include "DataReaderServer.h"
+#include <vector>
 #include "mutex"
 
 bool DataReaderServer::open = false;
@@ -53,7 +52,7 @@ void DataReaderServer::updateSymbolTable() {
 
 void DataReaderServer::openServer(int port, int hz) {
     int sockfd, newsockfd, clilen;
-    struct sockaddr_in serv_addr, cli_addr;
+    struct sockaddr_in serv_addr{}, cli_addr{};
     int n;
 
     /* First call to socket() function */

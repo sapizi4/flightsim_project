@@ -1,5 +1,9 @@
-#ifndef FLIGHTSIM_PROJECT_CLIENTHANDLER_H
-#define FLIGHTSIM_PROJECT_CLIENTHANDLER_H
+//
+// Created by maor on 26/01/2020.
+//
+
+#ifndef FLIGHTSIM_CLIENTHANDLER_H
+#define FLIGHTSIM_CLIENTHANDLER_H
 #define BUFFER_SIZE 1024
 
 #include <istream>
@@ -19,7 +23,6 @@ class ClientHandler{
 public:
 
     virtual void handleClient(int sockFd)=0;
-    ~ClientHandler()= default;;
+    ~ClientHandler()= default;
 };
-
-#endif //FLIGHTSIM_PROJECT_CLIENTHANDLER_H
+#endif //FLIGHTSIM_CLIENTHANDLER_H

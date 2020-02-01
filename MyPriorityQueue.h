@@ -1,10 +1,9 @@
 //
-// Created by Sapir on 24/01/2020.
+// Created by maor on 24/01/2020.
 //
 
-#ifndef FLIGHTSIM_PROJECT_MYPRIORITYQUEUE_H
-#define FLIGHTSIM_PROJECT_MYPRIORITYQUEUE_H
-
+#ifndef FLIGHTSIM_MYPRIORITYQUEUE_H
+#define FLIGHTSIM_MYPRIORITYQUEUE_H
 #include <queue>
 #include <algorithm>
 #include <iostream>
@@ -33,8 +32,7 @@ public:
     inline void make_heaps(){
         make_heap(this->c.begin(), this->c.end(), this->comp);
     }
-    ~MyPriorityQueue()= default;;
+    ~MyPriorityQueue()= default;
 
 };
-
-#endif //FLIGHTSIM_PROJECT_MYPRIORITYQUEUE_H
+#endif //FLIGHTSIM_MYPRIORITYQUEUE_H
