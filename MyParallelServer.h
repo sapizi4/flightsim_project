@@ -2,7 +2,6 @@
 //
 // Created by maor on 24/01/2020.
 //
-
 #ifndef UNTITLED5_MYPARALLELSERVER_H
 #define UNTITLED5_MYPARALLELSERVER_H
 #define WAIT_FOR_CLIENT 1
