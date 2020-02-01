@@ -1,7 +1,6 @@
 //
 // Created by maor on 29/01/2020.
 //
-
 #ifndef FLIGHTSIM_MATRIXSEARCHABLE_H
 #define FLIGHTSIM_MATRIXSEARCHABLE_H
 #include "Searchable.h"
