@@ -1,9 +1,13 @@
 //
 // Created by Sapir on 19/01/2020.
 //
+//
+// Created by maor on 24/01/2020.
+//
 
-#ifndef FLIGHTSIM_PROJECT_BESTFIRSTSEARCH_H
-#define FLIGHTSIM_PROJECT_BESTFIRSTSEARCH_H
+#ifndef FLIGHTSIM_BESTFIRSTSEARCHER_H
+#define FLIGHTSIM_BESTFIRSTSEARCHER_H
+
 #include "GraphSearcher.h"
 #include <queue>
 #include <unordered_set>
@@ -75,4 +79,6 @@ public:
         return "-1"; //no solution
     }
 };
+#endif //FLIGHTSIM_BESTFIRSTSEARCHER_H
+
 #endif //FLIGHTSIM_PROJECT_BESTFIRSTSEARCH_H
