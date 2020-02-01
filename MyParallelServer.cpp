@@ -90,7 +90,6 @@ void MyParallelServer::open(int port, ClientHandler *ch) {
     }
 
 }
-
 void MyParallelServer::stop() {
     for (unsigned long thread : this->threads_created) {
         pthread_join(thread, nullptr);
