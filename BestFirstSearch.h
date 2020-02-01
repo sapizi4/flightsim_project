@@ -1,10 +1,6 @@
 //
 // Created by Sapir on 19/01/2020.
 //
-//
-// Created by maor on 24/01/2020.
-//
-
 #ifndef FLIGHTSIM_BESTFIRSTSEARCHER_H
 #define FLIGHTSIM_BESTFIRSTSEARCHER_H
 
